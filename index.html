@@ -2,13 +2,12 @@
 <html lang="fr-FR">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vanilla Pac-Man</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-
-        <img src="./img/cathodicfilter.jpg" alt="Filter">
 
         <!-- Background du jeu pour avoir un fond un peu plus beau -->
         <div class="arcadeBackground">
@@ -16,24 +15,42 @@
         </div>
 
         <!-- Formulaire avec le bouton jouer et le nom du joueur -->
-        <div class="arcadeFormulaire">
+        <form method="post" id="form_id">
+            <input type="hidden" value="" name="userName"  id="userName">
+        </form>
+
+        <div class="center">
+            <!-- Map, PacMan, et fantomes -->
+            <div class="map">
+                <img src="./img/pacman.gif" alt="Pacman">
+                <img src="./img/red-ghost.png" alt="RedGhost">
+                <img src="./img/blue-ghost.png" alt="BlueGhost">
+                <img src="./img/green-ghost.png" alt="GreenGhost">
+                <img src="./img/background.svg" alt="Labyrinthe">
+            </div>
+
+            <!-- Stats du joueurs affichées en bas de la zone de jeu -->
+            <div class="playerStats">
+                <h3 class="playerName"> Player1 </h3>
+                <h3> ----------- </h3>
+                <h3 class="playerScore"> 0 </h3>
+
+            </div>
+
+            <div class="playerStats">
+                <h3 class="playerLevel"></h3>
+            </div>
+
 
         </div>
 
-        <!-- Map, PacMan, et fantomes -->
-        <div class="map">
-            <img src="./img/pacman.gif" alt="Pacman">
-            <img src="./img/red-ghost.png" alt="RedGhost">
-            <img src="./img/blue-ghost.png" alt="BlueGhost">
-            <img src="./img/green-ghost.png" alt="GreenGhost">
-            <img src="./img/background.svg" alt="Labyrinthe">
-        </div>
+        <div id="myModal" class="modal">
 
-        <!-- Stats du joueurs affichées en bas de la zone de jeu -->
-        <div class="playerStats">
-            <h3 class="playerName"> Player1 </h3>
-            <h3> ----------- </h3>
-            <h3 class="playerScore"> 0 </h3>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <ul></ul>
+            </div>
+
         </div>
 
         <!-- Script js du joueur -->
