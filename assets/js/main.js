@@ -1,9 +1,9 @@
     // Variables globales
     const map = document.querySelector('.map')
-    const pacMan = document.querySelector('img[src="./img/pacman.gif"]')
-    const redGhost = document.querySelector('img[src="./img/red-ghost.png')
-    const blueGhost = document.querySelector('img[src="./img/blue-ghost.png"]')
-    const greenGhost = document.querySelector('img[src="./img/green-ghost.png"]')
+    const pacMan = document.querySelector('img[src="assets/img/pacman.gif"]')
+    const redGhost = document.querySelector('img[src="assets/img/red-ghost.png')
+    const blueGhost = document.querySelector('img[src="assets/img/blue-ghost.png"]')
+    const greenGhost = document.querySelector('img[src="assets/img/green-ghost.png"]')
     const input = document.getElementById("userName")
     const modal = document.getElementById("myModal")
     const btn = document.getElementById("myBtn")
@@ -11,7 +11,7 @@
     let posts = []
     const ul = document.querySelector('ul');
     let endGame = false
-    let url = 'score.php'
+    let url = 'index.php?controller=ajax'
     let confirmation
 
 
@@ -301,7 +301,7 @@
 
                 if (!endGame){
                     if (confirmation) {
-                        fetch('score.php', {
+                        fetch('index.php?controller=ajax', {
                             method: 'POST',
                             body: JSON.stringify({
                                 user: userName,
@@ -317,12 +317,13 @@
                             .then(
                                 response => response.json()
                             ).then(
-                            json => {
-                                console.log(json)
-                            }
+                                res => leaderboard(res)
                         ).catch(
                             error => console.error(error)
                         )
+                    }
+                    else {
+                        leaderboard()
                     }
 
 
@@ -330,28 +331,6 @@
                     clearInterval(blueGhostInterval)
                     clearInterval(redGhostInterval)
                     removeEventListener("keydown", endHand)
-                    endGame = true
-                    if (endGame){
-                        window.fetch(url).then(
-                            result => result.json()
-                        ).then(
-                            json => {
-                                console.log(json);
-                                posts = json
-                                const postsList = posts.map(post => {
-                                    console.log(post);
-                                    return `<li class="flex"><div>${post.user} </div><div>--------------- </div><div>${ post.scoreUser }</div></li>`
-                                });
-                                const ulContent = postsList.join('')
-
-                                ul.innerHTML = ulContent;
-                            }
-                        ).catch(
-                            error => console.log(error)
-                        );
-                        modal.style.display = 'block'
-                        clearInterval(pacManInterval)
-                    }
                 }
             }
 
@@ -688,6 +667,35 @@
             displayNameInput()
 
         }
+
+    }
+
+
+    const leaderboard = (message) => {
+        console.log(message)
+        window.fetch(url).then(
+            result => result.json()
+        ).then(
+            json => {
+                console.log(json);
+                posts = json
+                const postsList = posts.map(post => {
+                    console.log(post);
+                    return `<li class="flex"><div>${post.user} </div><div>--------------- </div><div>${ post.scoreUser }</div></li>`
+                });
+                const ulContent = postsList.join('')
+
+                ul.innerHTML = ulContent;
+                displayModal()
+            }
+        ).catch(
+            error => console.log(error)
+        );
+        clearInterval(pacManInterval)
+    }
+
+    const displayModal = () =>{
+        modal.style.display = 'block'
 
     }
 

@@ -40,34 +40,34 @@ body {
     position: relative;
 }
 
-img[src="./img/pacman.gif"] {
+img[src="assets/img/pacman.gif"] {
     position: absolute;
     top: 500px;
     left: 500px;
 }
 
-img[src="./img/red-ghost.png"] {
+img[src="assets/img/red-ghost.png"] {
     position: absolute;
     top: 400px;
     left: 400px;
     width: 100px;
 }
 
-img[src="./img/blue-ghost.png"] {
+img[src="assets/img/blue-ghost.png"] {
     position: absolute;
     top: 400px;
     left: 400px;
     width: 100px;
 }
 
-img[src="./img/green-ghost.png"] {
+img[src="assets/img/green-ghost.png"] {
     position: absolute;
     top: 400px;
     left: 400px;
     width: 100px;
 }
 
-img[src="./img/background.svg"] {
+img[src="assets/img/background.svg"] {
     position: absolute;
     top: 0;
     left: 0;
