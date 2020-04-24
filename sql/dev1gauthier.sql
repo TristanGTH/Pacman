@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 20 avr. 2020 à 17:39
+-- Généré le :  ven. 24 avr. 2020 à 16:34
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `pacmanmain`
+-- Base de données :  `dev1gauthier`
 --
 
 -- --------------------------------------------------------
@@ -34,34 +34,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user` varchar(255) NOT NULL,
   `scoreUser` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=489 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=518 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `user`, `scoreUser`) VALUES
-(468, 'PacMan', 5),
-(488, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 11),
-(487, 'PacMan', 11),
-(486, 'PacMan', 10),
-(485, 'Tristan', 87),
-(484, 'Paul', 24),
-(483, 'Paul', 3),
-(482, 'Charlie', 20),
-(481, 'PacMan', 5),
-(480, 'Billy', 26),
-(479, 'PacMan', 4),
-(478, 'PacMan', 1),
-(477, 'PacMan', 15),
-(476, 'PacMan', 8),
-(475, 'PacMan', 1),
-(474, 'PacMan', 30),
-(473, 'PacMan', 1),
-(472, 'PacMan', 18),
-(471, 'PacMan', 4),
-(470, 'PacMan', 2),
-(469, 'PacMan', 5);
+(517, 'lolilol', 7),
+(516, 'dylan', 18),
+(515, 'kkkkk', 3),
+(514, 'glbskf', 37),
+(513, 'thomas', 4),
+(512, 'pls', 36),
+(511, 'tristan', 13),
+(510, 'theo', 12),
+(509, 'manon', 18),
+(508, 'PacMan', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
